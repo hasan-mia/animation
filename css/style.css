@@ -1,0 +1,83 @@
+*{
+    margin:0;
+    padding:0;
+    outline:0;
+}
+.field p {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    text-shadow: 1px 2px 4px;
+}
+.field{
+    max-width:100%;
+    height: 570px;
+    border-radius: 40%;
+    border: 5px dotted deeppink;
+    background: linear-gradient(green, darkgreen);
+    position:relative
+}
+
+.pitch{
+    width: 60%;
+    height: 250px;
+    background: gainsboro;
+    position:absolute;
+    top: 25%;
+    left: 15%;
+}
+.pitch::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 4px;
+    background: #9da69d;
+    left: 85px;
+    z-index: 0;
+}
+.bat {
+    margin-top: 0;
+    margin-left: 10%;
+    height: 200px;
+    transition: transform 1.5s;
+}
+.pitch:hover .bat {
+    transform: rotate(-55deg);
+    transform-origin: 100% 0;
+    margin-top: -20px;
+}
+.ball {
+    width: 5%;
+    position: absolute;
+    top: 60%;
+    left: 36%;
+    transition: transform 2s;
+    visibility: hidden;
+}
+.pitch:hover .ball {
+    transform: translate(700px, -300px);
+    transition-delay: 1.4s;
+    visibility: visible;
+}
+img.six {
+    height: 200px;
+    visibility: hidden;
+    margin-left: 90%;
+    margin-top: -170px;
+}       
+.pitch:hover .six{
+    visibility: visible;
+    transition-delay: 2.8s;
+}
+.fa-phone {
+    font-size: 50px;
+    position: absolute;
+    text-align: center;
+    left: 80%;
+    top: 20%;
+    color: #fff;
+    border: 2px solid grey;
+    padding: 20px;
+    border-radius: 50%;
+}
