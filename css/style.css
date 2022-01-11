@@ -3,13 +3,8 @@
     padding:0;
     outline:0;
 }
-.field p {
-    position: relative;
-    text-align: center;
-    color: #fff;
-    font-size: 36px;
-    text-shadow: 1px 2px 4px;
-}
+
+/* Cricket Animation*/
 .field{
     max-width:100%;
     height: 570px;
@@ -18,7 +13,13 @@
     background: linear-gradient(green, darkgreen);
     position:relative
 }
-
+.field p {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    text-shadow: 1px 2px 4px;
+}
 .pitch{
     width: 60%;
     height: 250px;
@@ -36,30 +37,69 @@
     left: 85px;
     z-index: 0;
 }
+
 .bat {
     margin-top: 0;
     margin-left: 10%;
     height: 200px;
     transition: transform 1.5s;
 }
-.pitch:hover .bat {
-    transform: rotate(-55deg);
-    transform-origin: 100% 0;
-    margin-top: -20px;
+
+@keyframes batanimation {
+    from{
+        transform: rotate(0deg);
+        transform-origin: 100% 0;
+        margin-top: -20px;
+            
+            
+    }
+    to{
+        transform: rotate(-55deg);
+        transform-origin: 100% 0;
+        margin-top: -20px;
+        transition-delay: 5s;
+            
+    }
 }
+
+.pitch:hover .bat{
+    animation: batanimation;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
 .ball {
-    width: 5%;
+    width: 7%;
     position: absolute;
     top: 60%;
     left: 36%;
     transition: transform 2s;
     visibility: hidden;
 }
-.pitch:hover .ball {
-    transform: translate(700px, -300px);
-    transition-delay: 1.4s;
-    visibility: visible;
+
+@keyframes ballanimation {
+    0%{
+        transform: translate(0px, 0px);
+        visibility: visible;
+    }
+    100%{
+        transform: translate(700px, -300px);
+        visibility: visible;  
+    }
 }
+
+.pitch:hover .ball{
+    animation: ballanimation;
+    animation-duration: 2.8s;
+    animation-timing-function: linear;
+    animation-delay: 1.4s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
 img.six {
     height: 200px;
     visibility: hidden;
@@ -68,16 +108,6 @@ img.six {
 }       
 .pitch:hover .six{
     visibility: visible;
-    transition-delay: 2.8s;
-}
-.fa-phone {
-    font-size: 50px;
-    position: absolute;
-    text-align: center;
-    left: 80%;
-    top: 20%;
-    color: #fff;
-    border: 2px solid grey;
-    padding: 20px;
-    border-radius: 50%;
+    transition: 2s;
+    transition-delay: 4s;
 }
